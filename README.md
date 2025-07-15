@@ -1,7 +1,6 @@
 # how to get started
 
-- this is an Expo React Native project with local iOS build.
-- note: for loading the app on an iOS device (or simulator) with a **local** development build.
+- note: this is an Expo React Native project. instructions below are for loading the app on an iOS device (or simulator) throuhg a **local** development build.
 
 0. install Xcode, Xcode CLI tools, Watchman (optionally: an iOS simulator)
 
