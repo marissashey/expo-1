@@ -1,8 +1,10 @@
-# ignore Ruby files in language stats
+# ignore Ruby + Swift files in language stats
 Podfile linguist-vendored
 Podfile.lock linguist-vendored
 scripts/** linguist-vendored
 *.rb linguist-vendored
+
+ios/** linguist-vendored
 
 # mark JS/TS files explicitly
 *.ts linguist-language=TypeScript
