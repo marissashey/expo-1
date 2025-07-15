@@ -2,18 +2,17 @@
 
 - note: this is an Expo React Native project. instructions below are for loading the app on an iOS device (or simulator) throuhg a **local** development build.
 
-0. install Xcode, Xcode CLI tools, Watchman (optionally: an iOS simulator)
+1. install Xcode, Xcode CLI tools, Watchman (optionally: an iOS simulator)
 
    <https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=physical&mode=development-build&buildEnv=local>
 
-1. install dependencies
+2. install dependencies
 
    ```bash
    npm install
-   npx expo start
    ```
 
-2. start and keep Metro (JS bundler) running
+3. start and keep Metro (JS bundler) running
 
    - keeping it running **in its own terminal** means the next step doesn't require a restart = not re-bunding from scratch = way faster
 
@@ -21,7 +20,7 @@
    npx expo start
    ```
 
-3. (optionally, later) use release build
+4. (optionally, later) use release build
 
    - this builds a faster app binary with a pre-bundled JS bundle but the build process itself can be much slower (and you don't get fast refresh)
 
@@ -43,7 +42,7 @@
      // shortcut: `ios:sim`
      ```
 
-4. (only when adding/removing/upgrading **native** iOS dependencies) reset CocoaPods cache
+5. (only when adding/removing/upgrading **native** iOS dependencies) reset CocoaPods cache
 
    ```bash
    rm -rf Pods Podfile.lock && pod install
