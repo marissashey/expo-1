@@ -1,50 +1,51 @@
-# Welcome to your Expo app 👋
+# how to get started
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- this is an Expo React Native project with local iOS build.
+- note: for loading the app on an iOS device (or simulator) with a **local** development build.
 
-## Get started
+0. install Xcode, Xcode CLI tools, Watchman (optionally: an iOS simulator)
 
-1. Install dependencies
+   <https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=physical&mode=development-build&buildEnv=local>
+
+1. install dependencies
 
    ```bash
    npm install
+   npx expo start
    ```
 
-2. Start the app
+2. start and keep Metro (JS bundler) running
+
+   - keeping it running **in its own terminal** means the next step doesn't require a restart = not re-bunding from scratch = way faster
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. (optionally, later) use release build
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - this builds a faster app binary with a pre-bundled JS bundle but the build process itself can be much slower (and you don't get fast refresh)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   - **open a new terminal window for either option**
 
-## Get a fresh project
+   - option 1: personal device build
 
-When you're ready, run:
+     ```bash
+     xcrun xctrace list devices
 
-```bash
-npm run reset-project
-```
+     npx expo run:ios --device [insert-device]
+     // recommendation: add an npm script to run the app on your personal device (e.g., `ios:MS`)
+     ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+     - option 2: ios simulator
 
-## Learn more
+     ```bash
+     npx expo run:ios
+     // shortcut: `ios:sim`
+     ```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. (only when adding/removing/upgrading **native** iOS dependencies) reset CocoaPods cache
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+   ```bash
+   rm -rf Pods Podfile.lock && pod install
+   ```
