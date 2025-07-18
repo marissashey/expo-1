@@ -40,7 +40,7 @@ export default function Cam() {
 
   const frameProcessor = useFrameProcessor((frame) => {
     "worklet";
-    // console.log(`Frame: ${frame.width}x${frame.height} (${frame.pixelFormat})`);
+    console.log(`Frame: ${frame.width}x${frame.height} (${frame.pixelFormat})`);
   }, []);
 
   return (
