@@ -12,10 +12,10 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.sheymari.expo1",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera."
       }
     },
-
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -47,6 +47,12 @@
       "eas": {
         "projectId": "22895357-ddf7-4a44-b570-08fb81c624d8"
       }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "package": "com.sheymari.expo1"
     }
   }
 }
